@@ -1,6 +1,6 @@
 # /context-finder - Search History & Context
 
-Fast search through git history, retrospectives, issues, and codebase.
+Fast search through git history, retrospectives, issues, and codebase using the context-finder subagent.
 
 ## Usage
 
@@ -13,13 +13,21 @@ Fast search through git history, retrospectives, issues, and codebase.
 
 ### No Arguments (Default)
 When called without arguments, automatically gather:
-1. Recent commits (last 10)
-2. Latest retrospectives (last 3)
-3. Latest learnings (last 3)
-4. Open issues or pending tasks
+1. **Recent context issues** - `gh issue list` filtered by "context:" prefix
+2. **Latest retrospectives** - Most recent 3 files in `retrospectives/`
+3. **Latest learnings** - Most recent 3 files in `learnings/`
+4. **Recent commits** - Last 10 commits with timestamps
 
 ### With Arguments
 Search across all sources for the specific query.
+
+## Examples
+
+```
+/context-finder                        # Recent context summary
+/context-finder voice notification     # Search specific topic
+/context-finder workshop requests      # Find workshop context
+```
 
 ## Action
 
